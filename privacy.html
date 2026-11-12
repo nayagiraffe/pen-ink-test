@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>개인정보 처리 안내 · Pen &amp; Ink Lab</title>
+<style>
+:root{--bg:#f7f5f0;--text:#1b2230;--muted:#586172;--line:#e1ddd2;--accent:#1e3a5f}
+@media (prefers-color-scheme:dark){:root{--bg:#12151b;--text:#e9ecf2;--muted:#a3acbb;--line:#2f3745;--accent:#8db8e6}}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.7 system-ui,-apple-system,"Segoe UI",Roboto,"Apple SD Gothic Neo","Noto Sans KR",sans-serif}
+main{max-width:720px;margin:0 auto;padding:24px 16px 64px}
+h1{font-size:24px;margin:0 0 4px}h2{font-size:18px;margin:28px 0 6px}p,li{margin:6px 0}ul{padding-left:20px}
+.muted{color:var(--muted);font-size:14px}a{color:var(--accent)}
+.todo{background:#fff3cd;color:#5c4400;padding:2px 6px;border-radius:4px}
+@media (prefers-color-scheme:dark){.todo{background:#4a3a00;color:#ffe49a}}
+table{border-collapse:collapse;width:100%;font-size:15px}th,td{border-bottom:1px solid var(--line);padding:6px 8px;text-align:left;vertical-align:top}
+</style>
+</head>
+<body>
+<main>
+<p><a href="./">← 앱으로 돌아가기</a></p>
+<h1>개인정보 처리 안내</h1>
+<p class="muted">Pen &amp; Ink Lab(만년필·잉크 기록 앱) · 시행일 <span class="todo">[[시행일 YYYY-MM-DD]]</span></p>
+
+<h2>한 줄 요약</h2>
+<p>이 앱은 <b>회원가입이 없고 운영자 서버가 없습니다.</b> 입력한 만년필·잉크·기록·사진은 <b>사용자의 기기(브라우저)</b>에만 저장되며, 운영자는 그 내용을 받거나 볼 수 없습니다.</p>
+
+<h2>1. 저장되는 정보와 위치</h2>
+<table>
+<tr><th>정보</th><th>저장 위치</th></tr>
+<tr><td>만년필·잉크·잉입 기록·시필 노트</td><td>사용자 기기의 브라우저 저장소(IndexedDB)</td></tr>
+<tr><td>카드에 넣은 사진(앨범·카메라)</td><td>사용자 기기의 브라우저 저장소. 보관할 때 크기를 줄입니다. 사진은 사용자가 고른 것만 저장됩니다.</td></tr>
+<tr><td>마지막 백업 시각 등 앱 설정</td><td>사용자 기기의 브라우저 저장소</td></tr>
+<tr><td>앱 파일(오프라인 사용을 위한 사본)</td><td>사용자 기기의 브라우저 캐시</td></tr>
+</table>
+<p>이 정보는 운영자에게 전송되지 않습니다. 이름·이메일·전화번호 같은 개인 식별 정보를 앱이 요구하지 않습니다.</p>
+
+<h2>2. 수집하지 않는 것</h2>
+<ul>
+<li>분석·통계 도구, 광고, 추적 쿠키를 사용하지 않습니다.</li>
+<li>위치, 연락처, 마이크 정보를 사용하지 않습니다. 카메라는 사용자가 “카메라로 촬영”을 선택했을 때 사진 한 장을 찍는 용도로만 쓰입니다.</li>
+</ul>
+
+<h2>3. 구글 드라이브 연동 (선택 기능 · 제공되는 경우)</h2>
+<p>구글 드라이브 연동이 제공되는 버전에서, 사용자가 직접 “연결”을 누른 경우에만 다음이 적용됩니다. 연결하지 않으면 아래 내용은 일어나지 않습니다.</p>
+<ul>
+<li><b>접근 범위:</b> 구글 권한 <code>drive.appdata</code> 하나만 요청합니다. 이는 이 앱 전용의 숨김 폴더만 읽고 쓰는 권한이며, 사용자의 다른 드라이브 파일은 볼 수 없습니다.</li>
+<li><b>저장 위치:</b> 데이터는 <b>사용자 본인의 구글 드라이브</b> 앱 전용 폴더에 저장됩니다(백업과 같은 내용: 기록과 사진). 운영자의 드라이브나 서버로 가지 않습니다.</li>
+<li><b>접속 정보:</b> 앱은 사용자의 브라우저에서 구글(Google)의 서버와 직접 통신합니다. 이 과정의 정보에는 구글의 개인정보처리방침이 적용됩니다. 로그인 접근 토큰은 사용 중에만 메모리에 두고 앱 저장소에 남기지 않는 것을 원칙으로 합니다.</li>
+<li><b>이용 제한:</b> 이 앱이 구글 API를 통해 받은 정보의 사용과 다른 앱으로의 전달은 <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API 서비스 사용자 데이터 정책</a>(제한적 사용 요건 포함)을 따릅니다. 이 정보는 사용자가 요청한 동기화 기능을 제공하는 목적으로만 사용하며, 광고나 제3자 제공에 쓰지 않습니다.</li>
+</ul>
+
+<h2>4. 삭제와 접근 철회</h2>
+<ul>
+<li><b>기기 안 데이터:</b> 앱 “데이터” 탭의 “모두 지우고 처음부터”로 지울 수 있고, 브라우저의 사이트 데이터 삭제로도 지워집니다. 삭제 전에 백업을 받아 두세요.</li>
+<li><b>드라이브 연동:</b> 구글 계정의 “서드 파티 앱 및 서비스 연결”(<a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a>)에서 이 앱의 접근을 끊을 수 있습니다. 드라이브 설정의 “앱 관리”에서 이 앱의 숨김 데이터를 삭제할 수 있습니다.</li>
+</ul>
+
+<h2>5. 백업 파일</h2>
+<p>앱이 만드는 백업 파일(.json/.zip)과 엑셀 파일은 사용자의 기기에 저장되며, 이를 어디에 보관하거나 누구에게 보낼지는 사용자가 정합니다.</p>
+
+<h2>6. 어린이</h2>
+<p>이 앱은 어린이를 대상으로 하지 않으며, 어떤 이용자의 개인정보도 운영자가 수집하지 않습니다.</p>
+
+<h2>7. 변경</h2>
+<p>이 안내가 바뀌면 이 페이지의 시행일을 갱신해 알립니다.</p>
+
+<h2>8. 문의</h2>
+<p>운영자 연락처: <span class="todo">[[문의 이메일]]</span></p>
+</main>
+</body>
+</html>
